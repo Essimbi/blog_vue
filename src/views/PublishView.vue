@@ -8,7 +8,7 @@ const response = ref('') ;
 
 const getMessage = (message) => {
     response.value = message ;
-    alert(response) ;
+    alert(response.value) ;
 }
 
 </script>
@@ -16,6 +16,6 @@ const getMessage = (message) => {
 <template>
     <div class="container mt-4 mb-4">
         <h5>Rédaction d'un nouvel article article</h5>
-        <ArticleForm :getMessage="getMessage" />
+        <ArticleForm @getMessage="getMessage"/>
     </div>
 </template>

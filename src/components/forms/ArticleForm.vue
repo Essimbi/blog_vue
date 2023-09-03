@@ -1,10 +1,12 @@
 <script setup>
-import { ref, defineProps } from 'vue' ;
+import { ref, defineEmits } from 'vue' ;
 import axios from 'axios' ;
 
-const props = defineProps({
-    getMessage: Function
-})
+// const props = defineProps({
+//     getMessage: Function
+// })
+
+const emits = defineEmits(['getMessage']) ;
 
 const title = ref('') ;
 const author = ref('') ;
@@ -24,7 +26,8 @@ const handleSubmit = () => {
         title.value = "" ;
         author.value= "";
         content.value="";
-        props.getMessage(response.data.message) ;
+        // props.getMessage(response.data.message) ;
+        emits("getMessage", response.data.message) ;
     })
     .catch( (error) => console.log(error))
 }

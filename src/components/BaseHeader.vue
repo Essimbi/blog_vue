@@ -22,7 +22,7 @@ const slides = [
 </script>
 
 <template>
-    <section id="header-content" class="container mb-4">
+    <section id="header-content" class="container mb-4 mt-4">
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"

@@ -1,7 +1,12 @@
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, computed } from 'vue';
 
 const props = defineProps(['article']);
+const formattedDate = computed(() => {
+    let date = new Date(props.article.date);
+    return date.toLocaleDateString('fr-FR');
+})
+
 </script>
 
 <template>
@@ -19,7 +24,7 @@ const props = defineProps(['article']);
             </blockquote>
         </div>
         <div class="card-footer text-muted text-center">
-            Publié le {{ props.article.date }}
+            Publié le {{ formattedDate }}
         </div>
     </div>
 </template>

@@ -1,7 +1,12 @@
 <script setup>
-    import { defineProps } from 'vue' ;
+    import { defineProps, computed } from 'vue' ;
     
     const props = defineProps(['article']) ;
+    const formattedDate = computed(() => {
+        let date = new Date(props.article.date) ;
+        return date.toLocaleDateString('fr-FR') ;
+    })
+
 </script>
 
 <template>
@@ -13,7 +18,7 @@
                     <!-- Article de : {{ props.article.author }} -->
                 </span>
                 <small>
-                    Date de publication: <strong>{{ props.article.date }}</strong>
+                    Publié le <strong>{{ formattedDate }}</strong>
                 </small>
             </p>
             <router-link :to="'/article/' + props.article._id" class="btn btn-primary">Lire</router-link>

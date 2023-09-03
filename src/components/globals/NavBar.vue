@@ -21,7 +21,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand container" href="#">Logo</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -39,3 +39,21 @@
 
     </nav>
 </template>
+
+<style scoped>
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    position: static; 
+    z-index: 1;
+  }
+} 
+
+</style>
