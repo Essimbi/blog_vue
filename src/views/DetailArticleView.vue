@@ -32,7 +32,7 @@ onMounted(async () => {
     <div class="container mb-4">
         <div class="row">
             <div class="col-sm-8">
-                <h5>Detail de l'article {{ article.title }}</h5>
+                <h5>Detail de l'article <b>{{ article.title }}</b></h5>
                 <DetailsContainer :article="article" />
             </div>
             <div class="col-sm-4">
